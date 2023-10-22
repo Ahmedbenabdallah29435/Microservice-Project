@@ -1,0 +1,46 @@
+﻿version: "3.9"
+services:
+  discovery:
+    build: Atelier2
+    ports:
+      - "8761:8761"
+    image: "discovery-service"
+
+  plan:
+    build: Atelier1
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:C:/Users/AhmedBenAbdallah/testdb11212
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.h2.Driver
+      - SPRING_DATASOURCE_USERNAME=Ines
+      - SPRING_DATASOURCE_PASSWORD=
+      - spring.h2.console.settings.webAllowOthers=true # Allow remote connections
+    ports:
+      - "8084:8084"
+    image: "plan-service"
+
+  rental:
+    build: Phase-Spring
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:C:/Users/AhmedBenAbdallah/testdb33
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.h2.Driver
+      - SPRING_DATASOURCE_USERNAME=Ines
+      - SPRING_DATASOURCE_PASSWORD=
+      - spring.h2.console.settings.webAllowOthers=true # Allow remote connections
+    ports:
+      - "8000:8000"
+    image: "rental-service"
+
+  blog:
+    build: Atelier3
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:C:/Users/AhmedBenAbdallah/testdb3349940
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=org.h2.Driver
+      - SPRING_DATASOURCE_USERNAME=Ines
+      - SPRING_DATASOURCE_PASSWORD=
+      - spring.h2.console.settings.webAllowOthers=true # Allow remote connections
+    ports:
+      - "8090:8090"
+    image: "blogg-service"
