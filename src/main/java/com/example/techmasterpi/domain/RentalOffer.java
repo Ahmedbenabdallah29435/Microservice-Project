@@ -33,7 +33,7 @@ public class RentalOffer {
     private String adress;
 
     @Column
-    @JsonFormat(pattern = "dd-MM-yyyy")
+
 
     private LocalDate offredate;
 
