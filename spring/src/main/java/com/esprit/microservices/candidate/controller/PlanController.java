@@ -2,6 +2,7 @@ package com.esprit.microservices.candidate.controller;
 
 
 import com.esprit.microservices.candidate.domain.Plan;
+import com.esprit.microservices.candidate.model.PlanDTO;
 import com.esprit.microservices.candidate.repo.PlanRepo;
 import com.esprit.microservices.candidate.repo.UserRepo;
 import com.esprit.microservices.candidate.service.IPlan;
@@ -50,17 +51,18 @@ public class PlanController {
         }
     }
     @GetMapping("/getPlan")
-    public ResponseEntity<List<Plan>> getAllPlans() {
-        List<Plan> plans = plan.PLAN_DTOS();
+    public ResponseEntity<List<PlanDTO>> getAllPlans()
+    {
+        List<PlanDTO> plans = plan.findAll();
         return ResponseEntity.ok(plans);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Plan> getPlan(@PathVariable int id) {
-        Plan p = plan.get(id);
-        if (plan == null) {
+    public ResponseEntity<PlanDTO> getPlan(@PathVariable int id) {  PlanDTO contrat = plan.get(id);
+        if (contrat == null) {
             return ResponseEntity.notFound().build();
         } else {
-            return ResponseEntity.ok(p);
+            return ResponseEntity.ok(contrat);
+
         }
     }
 

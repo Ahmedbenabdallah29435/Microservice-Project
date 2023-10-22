@@ -23,7 +23,6 @@ public class ContractPlanservice implements IContractPlan{
    @Autowired
     ContractPlanRepo contractPlanRepo;
 
-    @Override
     public int create(ContractPlan c, int userid, int planid) throws MessagingException {
         User user = userRepository.findById(userid).get();
         Plan plan = planRepository.findById(planid).get();
@@ -43,7 +42,7 @@ public class ContractPlanservice implements IContractPlan{
         }
         //   sendEmail(c.getPlanUser().getEmail(), "text", "text");
         String htmlBody = "<h1><strong>Titre en gras</strong></h1><p><em>Texte en italique</em></p>";
-        //sendEmail("medhabib.dhaouadi@esprit.tn","text", "text", htmlBody);
+      //  sendEmail("medhabib.dhaouadi@esprit.tn","text", "text", htmlBody);
         return contractPlanRepo.save(c).getContractId();
     }
     @Override
@@ -97,6 +96,7 @@ public class ContractPlanservice implements IContractPlan{
         return contractPlanRepo.findById(contractId)
                 .orElseThrow(NoSuchElementException::new);
     }
+
 
 
 }

@@ -1,15 +1,19 @@
 package com.esprit.microservices.candidate.service;
 
 import com.esprit.microservices.candidate.domain.Plan;
+import com.esprit.microservices.candidate.model.PlanDTO;
 
 import java.util.List;
 
 public interface IPlan {
     Plan create(Plan p, int userId) throws Exception;
 
-    Plan get(Integer planid);
 
-    List<Plan> PLAN_DTOS();
+
+    PlanDTO get(Integer planid);
+
+    List<PlanDTO> findAll();
+    List<PlanDTO> PLAN_DTOS ();
 
     Boolean update(Plan c);
 

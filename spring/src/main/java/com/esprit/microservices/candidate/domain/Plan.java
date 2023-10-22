@@ -1,12 +1,14 @@
+
+
 package com.esprit.microservices.candidate.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import net.minidev.json.annotate.JsonIgnore;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+        import com.fasterxml.jackson.annotation.JsonIgnore;
+        import lombok.Getter;
+        import lombok.Setter;
+        import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.*;
-import java.util.Set;
+        import javax.persistence.*;
+        import java.util.Set;
 
 
 @Entity
@@ -54,12 +56,13 @@ public class Plan {
     private String description;
 
     @OneToMany(mappedBy = "planContractPlan")
-    private Set<ContractPlan> planContractPlanContractPlans;
+    private Set<ContractPlan> contractPlans;
 
     @ManyToOne
     @JsonIgnore
+    @JoinColumn(name = "user_id")
     private User user;
-    private Integer userId;
+
 
     public Plan(String title, Double price, Double realizationprice, Integer livingroom, Integer kitchen, Integer wc, Integer room1, Integer room2, String description) {
     }

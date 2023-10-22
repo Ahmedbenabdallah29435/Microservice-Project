@@ -25,13 +25,16 @@ public class ContractPlan {
     private Double price;
     @Column
     private String statut;
-   @ManyToOne
-    @JoinColumn(name = "plan_user_id")
+    @ManyToOne
+    @JoinColumn(name = "plan_user_id") // Colonne de jointure dans la table ContractPlan
     private User planUser;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "plan_contract_plan_id")
+    @ManyToOne
+
+    @JoinColumn(name = "plan_contract_plan_id")  // Assurez-vous que le nom correspond à la colonne de la table ContractPlan
     private Plan planContractPlan;
+
+
 
     public int getIdContrat() {
         return this.contractId;
@@ -41,3 +44,4 @@ public class ContractPlan {
         return this.statut;
     }
 }
+
