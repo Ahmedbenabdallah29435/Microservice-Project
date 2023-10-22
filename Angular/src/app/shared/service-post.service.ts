@@ -14,10 +14,10 @@ export class ServicePostService {
 
 
   constructor(private http: HttpClient, private userService:UserService) { }
-  private baseUrl = 'http://localhost:8084/api/post/posts';
+  private baseUrl = 'http://localhost:8090/api/post/posts';
   
-  private BASE_URL_DELETE ='http://localhost:8084/api/post/dPost'
-  private BASE_URL_AJOUT ='http://localhost:8084/api/post/addPost'
+  private BASE_URL_DELETE ='http://localhost:8090/api/post/dPost'
+  private BASE_URL_AJOUT ='http://localhost:8090/api/post/addPost'
     // need to build URL based on category id
 
 
@@ -44,10 +44,10 @@ export class ServicePostService {
   }
 
   updatePost(data:any){
-    return this.http.put('http://localhost:8084/api/post/updatePost' ,data)
+    return this.http.put('http://localhost:8090/api/post/updatePost' ,data)
   }
   getOffreById(id :any){
     console.log('gg' , id)
-    return this.http.get('http://localhost:8084/api/post/getid/'+id)
+    return this.http.get('http://localhost:8090/api/post/getid/'+id)
   }
 }
