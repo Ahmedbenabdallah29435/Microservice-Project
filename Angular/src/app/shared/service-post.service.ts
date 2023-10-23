@@ -14,7 +14,7 @@ export class ServicePostService {
 
 
   constructor(private http: HttpClient, private userService:UserService) { }
-  private baseUrl = 'http://localhost:8090/api/post/posts';
+  private baseUrl = 'http://localhost:8081/api/post/posts';
   
   private BASE_URL_DELETE ='http://localhost:8090/api/post/dPost'
   private BASE_URL_AJOUT ='http://localhost:8090/api/post/addPost'

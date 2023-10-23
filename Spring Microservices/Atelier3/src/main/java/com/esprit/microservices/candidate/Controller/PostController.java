@@ -111,7 +111,7 @@ public class PostController {
         post.setUserPost(user);
         post.setTitle(title);
         post.setCategory(category);
-        post.setCountLike(countlike);
+
         post.setState(state);
         post.setPostContent(postcontent);
         post.setPostdate(LocalDateTime.now());

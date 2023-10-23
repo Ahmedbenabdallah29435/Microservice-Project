@@ -9,7 +9,7 @@ import { UserService } from './user.service';
 export class ServicePlanService {
   
   constructor(private http: HttpClient,private userService:UserService) { }
-  private BASE_URL = 'http://localhost:8084/api/plans/getPlan';
+  private BASE_URL = 'http://localhost:8081/api/plans/getPlan';
   private BASE_URL_DELETE ='http://localhost:8084/api/plans/plan'
   private BASE_URL_AJOUT ='http://localhost:8084/api/plans/addplan1'
   private apiUrl ='http://localhost:8084/api/plans/addImage'

@@ -10,10 +10,10 @@ import { UserService } from './user.service';
 export class RentalofferserviceService {
 
   constructor(private http: HttpClient, private userService:UserService) { }
-  private BASE_URL = 'http://localhost:8000/rentaloffers/GetAllRentalOffers';
+  private BASE_URL = 'http://localhost:8081/rentaloffers/GetAllRentalOffers';
 
-  private BASE_URL_DELETE = 'http://localhost:8000/rentaloffers/deleteRentalOffer';
-  private BASE_URL_AJOUT = 'http://localhost:8000/rentaloffers/addRentalOffer';
+  private BASE_URL_DELETE = 'http://localhost:8081/rentaloffers/deleteRentalOffer';
+  private BASE_URL_AJOUT = 'http://localhost:8081/rentaloffers/addRentalOffer';
   private BASE_URL_UPDATE = 'http://localhost:8000/rentaloffers/update-RentalOffer';
   private BASE_URL_GETBYID = 'http://localhost:8000/rentaloffers/';
   private BASE_URL_AVAILABLE_OFFERS = 'http://localhost:8000/rentaloffers/GetAvailableRentalOffers/';

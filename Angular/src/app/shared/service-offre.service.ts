@@ -11,16 +11,16 @@ import { Note } from '../modele/sale/note.modele';
 export class ServiceOffreService {
 
   constructor(private http: HttpClient) { }
-  private url_ajout ='http://localhost:8000/PI/api/seller/addOffer';
-  private url_getAll = 'http://localhost:8000/PI/api/seller/findAll';
-  private url_delete = 'http://localhost:8000/PI/api/seller/deleteOffer';
-  private url_update='http://localhost:8000/PI/api/seller/updateOffer';
-  private BASE_URLFavorit='http://localhost:8000/PI/api/seller/favorite';
-  private url_getAllf='http://localhost:8000/PI/api/seller/offers/interesse';
-  private url_delete_favorit='http://localhost:8000/PI/api/seller/deleteOfferFavorit';
-  private url_note='http://localhost:8000/PI/api/seller/donnerNote';
-  private url_delete_note='http://localhost:8000/PI/api/seller/getMoyNote';
-  private url_moyenne_note='http://localhost:8000/PI/api/seller/donnerNote';
+  private url_ajout ='http://localhost:8095/api/seller/addOffer';
+  private url_getAll = 'http://localhost:8095/api/seller/findAll';
+  private url_delete = 'http://localhost:8095/api/seller/deleteOffer';
+  private url_update='http://localhost:8094/api/seller/updateOffer';
+  private BASE_URLFavorit='http://localhost:8094/api/seller/favorite';
+  private url_getAllf='http://localhost:8094/api/seller/offers/interesse';
+  private url_delete_favorit='http://localhost:8094/api/seller/deleteOfferFavorit';
+  private url_note='http://localhost:8094/api/seller/donnerNote';
+  private url_delete_note='http://localhost:8094/api/seller/getMoyNote';
+  private url_moyenne_note='http://localhost:8094/api/seller/donnerNote';
   addoffer(Selleroffer: Saleoffer, id:number): Observable<any> {
     return this.http.post<Saleoffer>(`${this.url_ajout}/${id}` ,Selleroffer);
   }
@@ -49,7 +49,7 @@ export class ServiceOffreService {
   }
   getOffreById(id :any){
     console.log('..' , id)
-    return this.http.get('http://localhost:8000/PI/api/seller/getbyId/'+id)
+    return this.http.get('http://localhost:8094/api/seller/getbyId/'+id)
   }
   markOfferAsFavorie(idoffre: number) {
     const url = `${this.BASE_URLFavorit}/${idoffre}`;

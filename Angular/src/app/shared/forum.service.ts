@@ -8,9 +8,9 @@ import { Comment } from '../modele/forum/comment.modele';
 export class ForumService {
 
   constructor(private http: HttpClient) { }
-  private BASE_URL = 'http://localhost:8084/api/comment/comments';
-  private BASE_URL_DELETE = 'http://localhost:8084/api/comment/dComment'
-  private BASE_URL_AJOUT ='http://localhost:8084/api/comment/addComment'
+  private BASE_URL = 'http://localhost:8081/api/comment/comments';
+  private BASE_URL_DELETE = 'http://localhost:8090/api/comment/dComment'
+  private BASE_URL_AJOUT ='http://localhost:8090/api/comment/addComment'
 
   getOffers(): Observable<any> {
     return this.http.get(`${this.BASE_URL}`);

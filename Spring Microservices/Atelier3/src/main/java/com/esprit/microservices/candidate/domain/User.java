@@ -143,5 +143,7 @@ public class User  {
     public void setUserPosts(Set<Post> userPosts) {
     this.userPosts = userPosts;
    }
+
+
 }
 
