@@ -49,8 +49,6 @@ public class Post {
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime postdate;
 
-    @Column
-    private Integer countLike;
 
 
     @Column
@@ -74,11 +72,6 @@ public class Post {
 
 
     private String followers;
-
-
-
-
-
 
 
 
